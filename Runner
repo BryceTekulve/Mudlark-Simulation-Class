@@ -1,0 +1,8 @@
+public class Runner
+{
+    public static void main(){
+    Simulation sim = new Simulation(17,10000000);
+    System.out.println(sim.profit());
+    }
+}
+
