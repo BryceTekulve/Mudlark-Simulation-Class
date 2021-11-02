@@ -1,39 +1,33 @@
 public class Simulation
 {
-    // instance variables - replace the example below with your own
     private int numberOfTickets;
     private int simLength;
-private double netGross = 0;
-    /**
-     * Constructor for objects of class Simulation
-     */
+    private double netGross = 0;
     public Simulation(int num,int length)
     {
-        // initialise instance variables
+    //length = number of trials to be preformed, num = number of tickets sold
         numberOfTickets = num;
         simLength = length;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Completes a nuber of simulations equal to the length requested
+     * Outputs the average of all simulations
      */
     public double profit()
     {
         int notShowUp = 0;
         for (long i = 0;i<simLength;i++){
-            notShowUp=0;
-        for (int n = 0;n < numberOfTickets;n++){
-        if (Math.random()<.08){
-        notShowUp++;
-        }
-        }
-        netGross = netGross + (numberOfTickets-15)*200;
-        if( numberOfTickets-notShowUp > 15){
-        netGross = netGross+(numberOfTickets-notShowUp-15)*-450;
-        }
+             notShowUp=0;
+             for (int n = 0;n < numberOfTickets;n++){
+                  if (Math.random()<.08){
+                      notShowUp++;
+                  }
+             }
+             netGross = netGross + (numberOfTickets-15)*200;
+             if( numberOfTickets-notShowUp > 15){
+                  netGross = netGross+(numberOfTickets-notShowUp-15)*-450;
+             }
 
         }
         netGross = netGross/simLength;
